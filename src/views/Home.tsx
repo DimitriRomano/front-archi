@@ -20,7 +20,7 @@ const HomeView: React.FC = () => {
         const colorResponse = error != 200 ? 'red' : 'green';
         const titleResponse = error != 200 ? 'Erreur' : 'Bravo';
         return (
-            <Alert  title={titleResponse} color={colorResponse}>
+            <Alert style={{marginBottom : "12px"}} title={titleResponse} color={colorResponse}>
                 {message}
             </Alert>
         )
