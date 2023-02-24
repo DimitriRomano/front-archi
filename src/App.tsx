@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.scss'
 import { Route, Routes } from 'react-router-dom'
 import HomeView from './views/Home'
+import { VMProvider } from './shared/VmContext'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomeView />} />
+        
+        <Route path="/" element={
+          <VMProvider>
+            <HomeView />
+          </VMProvider>
+        } />
       </Routes>
     </div>
   )
